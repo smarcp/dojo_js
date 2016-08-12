@@ -9,6 +9,24 @@ Exemplo:
 * 0,05 -> cinco centavos
 * 2,25 -> dois reais e vinte e cinco centavos
 
+## 2016-08-05
+
+### Prós
+
+* Evolução
+* Começou no horário
+* Ajustar foco do projetor
+
+### Contras
+
+* Parecia fácil
+
+### Participantes
+
+* Bruno Barbaro
+* David Sylvestre
+* Jailson Nogueira
+* Vitor Almagro
 
 ## 2016-08-05
 
