@@ -16,10 +16,10 @@ Exemplo:
 
 * Realizar Dojo
 * Trabalhar a lógica
-* novos métodos em js
+* Novos métodos em js
 	*	Array.find
-* roubar a sala
-* comunicação
+* Utilizar sala com projetor
+* Comunicação
 
 ### Contras
 	
@@ -30,7 +30,7 @@ Exemplo:
 ### Ação
 	
 * Aproveitar melhor o tempo
-* Ajusar foco do projetor
+* Ajustar foco do projetor
 
 ### Participantes
 
