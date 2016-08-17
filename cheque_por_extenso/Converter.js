@@ -26,9 +26,11 @@ var unidades = [{valor : 0, extenso : 'zero'},
                 {valor : 70, extenso : 'setenta'},
                 {valor : 80, extenso : 'oitenta'},
                 {valor : 90, extenso : 'noventa'},
-                {valor : 100, extenso : 'cem'},
+                {valor : 100, extenso : 'cento'},
                 {valor : 200, extenso : 'duzentos'},
+                {valor : 1000, extenso : 'mil'}
               ]
+var sufixo = [ '', ' mil', ' milh']
 
 var Converter = function(){
 
@@ -57,20 +59,32 @@ Converter.prototype.numberToArray = function(number){
 
 Converter.prototype.extenso = function(valor){
    
-   var retorno;
+  let retorno = []
+  let valorTail
+  let valorHead = valor
+  
+  while (valorHead > 0) {
+    valorTail = parseInt(valorHead.toString().slice(-3))  
+    valorHead = parseInt(valorHead.toString().slice(0, -3)) 
+    retorno.push(this.extenso3Element(valorTail))
+  }
+  retorno = retorno.map((value, index) =>{
+    return value + sufixo[index]
+  })
 
-   retorno = unidades.find((element) => element.valor == valor).extenso;
+  return retorno.reverse().join(' e ')  
     
-   return retorno + ' real(is)';
 }
 
-// var extenso = function(valor){
-   
-//    var retorno;
+Converter.prototype.extenso3Element = function(valor){
+  let extenso = []
+  let numberArray = this.numberToArray(valor)
 
-//    retorno = unidades.find((element) => element.valor == valor).extenso;
-    
-//    return retorno + ' real(is)';
-// };
+  for(let number of numberArray){
+    extenso.push(unidades.find((element) => element.valor == number).extenso)
+  }
+   
+   return extenso.join(' e ');
+}
 
 module.exports = Converter;

@@ -5,19 +5,31 @@ describe('Teste para escrever cheques por extenso\n', function(){
     var converter = new Converter()
 
     it('escrever cheque no valor de 1,00', function(){
-        var expectativa = 'um real(is)'
+        var expectativa = 'um'
         expect(expectativa).toEqual(converter.extenso(1))
     });
 
     it('escrever cheque no valor de 18,00', function(){
-        var expectativa = 'dezoito real(is)'
+        var expectativa = 'dezoito'
         expect(expectativa).toEqual(converter.extenso(18))
     });
 
-    xit('escrever cheque no valor de 21,00', function(){
+    it('escrever cheque no valor de 21,00', function(){
 
-        var expectativa = 'vinte e um real(is)'
+        var expectativa = 'vinte e um'
         expect(expectativa).toEqual(converter.extenso(21))
+    });
+
+     it('escrever cheque no valor de 1001,00', function(){
+
+        var expectativa = 'um mil e um'
+        expect(expectativa).toEqual(converter.extenso(1001))
+    });
+
+     it('escrever cheque no valor de 1158287,00', function(){
+
+        var expectativa = 'um milh e cento e cinquenta e oito mil e duzentos e oitenta e sete'
+        expect(expectativa).toEqual(converter.extenso(1158287))
     });
 });
 

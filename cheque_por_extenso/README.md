@@ -9,6 +9,29 @@ Exemplo:
 * 0,05 -> cinco centavos
 * 2,25 -> dois reais e vinte e cinco centavos
 
+## 2016-08-17
+
+### Prós
+
+* aprender funções novas
+* ta saindo da jaula, birl
+* evoluiu
+
+### Contra
+
+* poucas pessoas
+* está dificil
+* não saber as funções
+* muito tempo sem ver o problema
+* pouco charges (chocolate)
+
+### Participantes
+
+* Bruno Barbaro
+* David Sylvestre
+* Jailson Nogueira
+* Vitor Almagro
+
 ## 2016-08-05
 
 ### Prós
