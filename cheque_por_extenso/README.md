@@ -13,6 +13,26 @@ Exemplo:
 
 ### Prós
 
+* Está acabando
+* Pouco tempo de espera de um dojo para o outro
+* Refatoração de algumas partes
+
+### Contras
+
+* Poucas pessoas
+* Pouco tempo de dojo
+
+### Participantes
+
+* Bruno Barbaro
+* David Sylvestre
+* Jailson Nogueira
+* Vitor Almagro
+
+## 2016-08-17
+
+### Prós
+
 * aprender funções novas
 * ta saindo da jaula, birl
 * evoluiu

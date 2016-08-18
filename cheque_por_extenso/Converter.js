@@ -1,4 +1,4 @@
-var unidades = [{valor : 0, extenso : 'zero'},
+var unidades = [{valor : 0, extenso : ''},
                 {valor : 1, extenso : 'um'}, 
                 {valor : 2, extenso : 'dois'},
                 {valor : 3, extenso : 'três'},
@@ -28,63 +28,84 @@ var unidades = [{valor : 0, extenso : 'zero'},
                 {valor : 90, extenso : 'noventa'},
                 {valor : 100, extenso : 'cento'},
                 {valor : 200, extenso : 'duzentos'},
-                {valor : 1000, extenso : 'mil'}
+                {valor : 300, extenso : 'trezentos'},
+                {valor : 400, extenso : 'quatrocentos'},
+                {valor : 500, extenso : 'quinhentos'},
+                {valor : 600, extenso : 'seiscentos'},
+                {valor : 700, extenso : 'setecentos'},
+                {valor : 800, extenso : 'oitocentos'},
+                {valor : 900, extenso : 'novecentos'},
               ]
-var sufixo = [ '', ' mil', ' milh']
 
-var Converter = function(){
+var sufixo = [ '', ' mil', ' milh', 'bilh']
+
+var Converter = function() {
 
 }
 
-Converter.prototype.numberToArray = function(number){
+Converter.prototype.numberToArray = function(number) {
 
-  let retorno = []
-  let resto = 0
+    let retorno = []
+    let resto = 0
 
-  do{
-    if (number <= 20) {
-      retorno.push(number)
-      break
+    while (number > 20) {
+
+        resto = number % Math.pow(10, (number.toString().length) - 1)
+
+        retorno.push(number - resto)
+        number = resto
     }
-    
-    resto = number % Math.pow(10, (number.toString().length) - 1)
- 
-    retorno.push(number - resto)
-    number = resto
 
-  }while (true)
+    if (number != 0) {
+        retorno.push(number)
+    }
 
-  return retorno;
+    return retorno;
 }
 
-Converter.prototype.extenso = function(valor){
-   
-  let retorno = []
-  let valorTail
-  let valorHead = valor
-  
-  while (valorHead > 0) {
-    valorTail = parseInt(valorHead.toString().slice(-3))  
-    valorHead = parseInt(valorHead.toString().slice(0, -3)) 
-    retorno.push(this.extenso3Element(valorTail))
-  }
-  retorno = retorno.map((value, index) =>{
-    return value + sufixo[index]
-  })
+Converter.prototype.extenso = function(valor) {
 
-  return retorno.reverse().join(' e ')  
-    
+    let retorno = []
+    let valorTail
+    let valorHead = valor
+
+    while (valorHead > 0) {
+        valorTail = parseInt(valorHead.toString().slice(-3))
+        valorHead = parseInt(valorHead.toString().slice(0, -3))
+        retorno.push(this.extenso3Element(valorTail))
+    }
+
+    retorno = retorno.map((value, index) => {
+        
+        var a = ''
+        if (index > 1)
+            a = (value != 'um') ? 'ões' : 'ão'
+        return value + sufixo[index] + a
+    })
+
+    return retorno.reverse().join(' e ')
+
 }
 
-Converter.prototype.extenso3Element = function(valor){
-  let extenso = []
-  let numberArray = this.numberToArray(valor)
 
-  for(let number of numberArray){
-    extenso.push(unidades.find((element) => element.valor == number).extenso)
-  }
-   
-   return extenso.join(' e ');
+
+Converter.prototype.extenso3Element = function(valor) {
+    let extenso = []
+    let numberArray = this.numberToArray(valor)
+
+    if ( valor == 100 ){
+        return 'cem'
+    }
+
+    for (let number of numberArray) {
+
+        if (number != 0) {
+            extenso.push(unidades.find((element) => element.valor == number).extenso)
+        }
+
+    }
+
+    return extenso.join(' e ');
 }
 
 module.exports = Converter;
