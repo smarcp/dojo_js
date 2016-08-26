@@ -9,6 +9,27 @@ Exemplo:
 * 0,05 -> cinco centavos
 * 2,25 -> dois reais e vinte e cinco centavos
 
+## 2016-08-26
+
+### Prós
+
+* acabou
+* dadinho
+
+### Contras
+
+* café horrivel
+* código feio
+* pogs
+* ninguem chegou no horário
+
+### Participantes
+
+* Bruno Barbaro
+* David Sylvestre
+* Jailson Nogueira
+* Vitor Almagro
+
 ## 2016-08-17
 
 ### Prós
